@@ -11,7 +11,7 @@ export DESKTOP=DUMMY
 export MAIN_BIN=oxicord
 
 # Deploy dependencies
-quick-sharun /usr/bin/oxicord /usr/bin/tmux
+quick-sharun ./AppDir/bin/oxicord /usr/bin/tmux
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
