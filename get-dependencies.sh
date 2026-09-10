@@ -6,7 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm dbus chafa openssl tmux
+pacman -Syu --noconfirm chafa tmux
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
