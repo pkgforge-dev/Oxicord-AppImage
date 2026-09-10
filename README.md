@@ -7,7 +7,7 @@
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/Oxicord-AppImage)](https://github.com/pkgforge-dev/Oxicord-AppImage/releases/latest)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Link4Electronics/Oxicord-AppImage/refs/heads/main/AppDir/oxicord.png" width="256" />
+  <img src="https://raw.githubusercontent.com/pkgforge-dev/Oxicord-AppImage/refs/heads/main/AppDir/oxicord.png" width="256" />
 </p>
 
 
