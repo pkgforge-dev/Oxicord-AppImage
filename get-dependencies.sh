@@ -21,10 +21,13 @@ get-debloated-pkgs --add-common --prefer-nano
 echo "Getting app..."
 echo "---------------------------------------------------------------"
 mkdir -p ./AppDir/bin
-LINK=$(wget https://api.github.com/repos/linuxmobile/oxicord/releases -O - \
-      | sed 's/[()",{} ]/\n/g' | grep -o -m 1 "https.*$ARCH--unknown-linux-gnu")
-echo "$LINK" | awk -F'/' '{gsub(/^v/, "", $(NF-1)); print $(NF-1); exit}' > ~/version
+TAG=$(wget -qO- https://api.github.com/repos/linuxmobile/oxicord/releases/latest | grep -oP '"tag_name": "\K[^"]+')
+VERSION=${TAG#v}
+echo "$VERSION" > ~/version
+
+LINK=$(wget -qO- https://api.github.com/repos/linuxmobile/oxicord/releases/latest \
+      | grep -oP "https://[^\"]+$ARCH--unknown-linux-gnu[^\"]*")
 if ! wget --retry-connrefused --tries=30 "$LINK" -O ./AppDir/bin/oxicord 2>/tmp/download.log; then
-	cat /tmp/download.log
-	exit 1
+    cat /tmp/download.log
+    exit 1
 fi
