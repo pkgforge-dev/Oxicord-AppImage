@@ -20,7 +20,6 @@ get-debloated-pkgs --add-common --prefer-nano
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
 echo "Getting app..."
 echo "---------------------------------------------------------------"
-
 mkdir -p ./AppDir/bin
 LINK=$(wget https://api.github.com/repos/linuxmobile/oxicord/releases -O - \
       | sed 's/[()",{} ]/\n/g' | grep -o -m 1 "https.*$ARCH--unknown-linux-gnu")
